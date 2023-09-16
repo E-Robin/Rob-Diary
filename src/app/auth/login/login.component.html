@@ -1,0 +1,58 @@
+
+<mat-toolbar color="primary" >
+    <!-- <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+      <mat-icon>menu</mat-icon>
+    </button> -->
+    <span>ROB DIARIES</span>
+    <!-- <span class="example-spacer"></span>
+    <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+      <mat-icon>favorite</mat-icon>
+    </button>
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+      <mat-icon>share</mat-icon>
+    </button> -->
+</mat-toolbar>
+
+<div class="section">
+    <form  #loginForm="ngForm"  (ngSubmit)="submit(loginForm.value)"  >
+
+        <div class="head">
+           <h4>Login Form</h4> 
+        </div>
+        
+        <p>
+            <mat-form-field appearance="fill">
+              <mat-label>Fill form field</mat-label>
+              <input matInput
+                color="primary"
+                placeholder="email"
+                ngModel
+                name="email"
+                required>
+              <mat-icon matSuffix>account_box</mat-icon>
+              <!-- <mat-hint>account_box</mat-hint> -->
+            </mat-form-field>
+        </p>  
+          
+        <p>
+            <mat-form-field appearance="outline">
+              <mat-label>Outline form field</mat-label>
+              <input matInput 
+              placeholder="password"
+              ngModel
+              name="password"
+              required >
+              <mat-icon matSuffix>lock</mat-icon>
+              <!-- <mat-hint>lock</mat-hint> -->
+            </mat-form-field>
+        </p>  
+
+        <div class="head">
+            <button mat-raised-button color="warn"  [disabled]="!loginForm.valid" >
+                Login
+            </button>
+        </div>
+       
+    
+    </form>
+</div>

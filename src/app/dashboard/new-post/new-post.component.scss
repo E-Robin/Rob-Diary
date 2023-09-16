@@ -1,0 +1,28 @@
+section{
+    display: flex;
+    justify-content: center;
+    background: rgb(148, 227, 227);
+    margin: 0;
+    padding: 4rem;
+    
+    
+}
+mat-card{
+    padding: 3rem;
+    // background-color: rgb(136, 195, 203);
+}
+
+.form-group{
+    margin: 1rem;
+    display: flex;
+    flex-direction: column;
+
+    
+}
+
+input{
+    height: 2rem;
+    padding: 5px;
+    width: 15rem;
+}
+

@@ -1,0 +1,29 @@
+.section   {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+form{
+    margin-top: 4rem;
+    border:1px solid blueviolet;
+    padding: 2rem 3rem;
+}
+
+.head{
+    text-align: center;
+}
+
+
+.example-spacer {
+    // flex: 1 1 auto;
+    display: flex;
+    justify-content: center;
+  }
+
+mat-toolbar{
+    display: flex;
+    justify-content: center;
+    font-style: italic;
+    
+}

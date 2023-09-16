@@ -1,0 +1,61 @@
+<div class="example-container" [class.example-is-mobile]="mobileQuery.matches" >
+    <mat-toolbar color="primary" class="example-toolbar">
+      <button mat-icon-button (click)="snav.toggle()"><mat-icon>menu</mat-icon></button>
+      <h1 class="example-app-name">Responsive Rob-Diaies App</h1>
+    </mat-toolbar>
+  
+    <mat-sidenav-container class="example-sidenav-container"
+                           [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
+      <mat-sidenav class="sidenav"  #snav [mode]="mobileQuery.matches ? 'over' : 'side'"
+                   [fixedInViewport]="mobileQuery.matches" fixedTopGap="56"
+                   
+                   
+                   [ngStyle]="{ 'width.em': sidenavWidth }"
+                   (mouseenter)="increase()"
+                   (mouseleave)="decrease()">
+        <mat-nav-list>
+          <!-- <a mat-list-item routerLink="." *ngFor="let nav of fillerNav">{{nav}}</a> -->
+          <a mat-list-item routerLink="dashboard"> Dashboard</a>
+          <a mat-list-item routerLink="admin"> Admin</a>
+          <a mat-list-item routerLink="."> auth</a>
+          <a mat-list-item routerLink="."> home</a>
+        </mat-nav-list>
+        <mat-nav-list>
+            <mat-list-item routerLink="1" routerLinkActive="active" >
+              <mat-icon mat-list-icon>person</mat-icon>
+              <div fxFlex="10"></div>
+              <div *ngIf="sidenavWidth > 6" class="sidenav-item">
+                <h5 class="lead">About</h5>
+              </div>
+            </mat-list-item>
+      
+            <mat-list-item routerLink="2" routerLinkActive="active">
+              <mat-icon mat-list-icon>settings</mat-icon>
+              <div fxFlex="10"></div>
+              <div *ngIf="sidenavWidth > 6" class="sidenav-item">
+                <h5 class="lead">Services</h5>
+              </div>
+            </mat-list-item>
+      
+            <mat-list-item routerLink="3" routerLinkActive="active">
+              <mat-icon mat-list-icon>local_phone</mat-icon>
+              <div fxFlex="10"></div>
+              <div *ngIf="sidenavWidth > 6" class="sidenav-item">
+                <h5 class="lead">Contact</h5>
+              </div>
+            </mat-list-item>
+      
+      
+      
+          </mat-nav-list>
+      </mat-sidenav>
+  
+      <mat-sidenav-content  class="content" >
+        
+        <router-outlet></router-outlet>
+      </mat-sidenav-content>
+    </mat-sidenav-container>
+  </div>
+  
+  <div *ngIf="!shouldRun">Please open on Stackblitz to see result</div>
+  
